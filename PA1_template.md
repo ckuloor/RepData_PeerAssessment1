@@ -3,7 +3,7 @@
 ## Overview
 
 In this assignment, we are required to create a R makrdown and associated results files as part of the reproducable research course project. For this assignment, the data from a personal activity monitoring device is used. The monitoring device collected the activity data at every 5 minutes through out the day. The data set provided consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day. 
-The data for this assignment can be downloaded from the course web site: [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
+The data for this assignment can be downloaded from the course web site: [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip)
 
 The goal of this assignment is to review, process and analyze the data to find patterns in the person's activity while documenting the steps so that the research can reproduced in the future as needed.
 
