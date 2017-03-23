@@ -57,7 +57,7 @@ The mean total number of steps taken per day is calculated first by summing the 
 dailyDataSet <- aggregate(. ~ date, data = fiveMinuteActivityData, na.rm=TRUE,FUN = sum)
 
 # plot a histogram of total steps per day
-hist(dailyDataSet$steps, col="lightblue", main="Total Steps Per Day", xlab="Interval")
+hist(dailyDataSet$steps, col="lightblue", main="Total Steps Per Day", xlab="Steps", ylab="Days Count")
 ```
 
 The mean total number of steps per day is:
@@ -117,14 +117,14 @@ head(fiveMinuteDataMissingFilled)
 dailyDataSetNAFilled <- aggregate(.~ date, data = fiveMinuteDataMissingFilled,FUN = sum)
 
 # plot a histogram of total steps per day
-hist(dailyDataSetNAFilled$steps, main="Total Steps Per Day",col="lightblue",xlab="Interval")
+hist(dailyDataSetNAFilled$steps, main="Total Steps Per Day",col="lightblue",xlab="Steps",ylab="Days Count")
 
 mean(dailyDataSetNAFilled$steps)
 median(dailyDataSetNAFilled$steps)
 
 ```
 
-The histogram this time shows higher number of daily total steps. Also the mean and median values are the same this time. There is no much difference between the mean and median values with and without NAs. This could be because, for the given data set, there were several days with steps not available. Hence, filling them with the mean for 5-minute interval resulted the mean and median to be the same and very close to that of with dataset ingoring the NAs. The conclusion is that there is no significant change in the distribution of the number of steps across intervals.
+The histogram this time shows that there are more days with non-zero total steps. However, the mean and median values are the same this time. There is not much difference between the mean and median values with and without NAs. This could be because, for the given data set, there were several days with steps not available. Hence, filling them with the mean for 5-minute interval resulted the mean and median to be the same and very close to that of with dataset ingoring the NAs. The conclusion is that there is no significant change in the distribution of the number of steps across intervals.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

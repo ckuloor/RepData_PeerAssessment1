@@ -83,7 +83,7 @@ The mean total number of steps taken per day is calculated first by summing the 
 dailyDataSet <- aggregate(. ~ date, data = fiveMinuteActivityData, na.rm=TRUE,FUN = sum)
 
 # plot a histogram of total steps per day
-hist(dailyDataSet$steps, col="lightblue", main="Total Steps Per Day", xlab="Interval")
+hist(dailyDataSet$steps, col="lightblue", main="Total Steps Per Day", xlab="Steps", ylab="Days Count")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
@@ -185,7 +185,7 @@ head(fiveMinuteDataMissingFilled)
 dailyDataSetNAFilled <- aggregate(.~ date, data = fiveMinuteDataMissingFilled,FUN = sum)
 
 # plot a histogram of total steps per day
-hist(dailyDataSetNAFilled$steps, main="Total Steps Per Day",col="lightblue",xlab="Interval")
+hist(dailyDataSetNAFilled$steps, main="Total Steps Per Day",col="lightblue",xlab="Steps",ylab="Days Count")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
@@ -206,7 +206,7 @@ median(dailyDataSetNAFilled$steps)
 ## [1] 10766.19
 ```
 
-The histogram this time shows higher number of daily total steps. Also the mean and median values are the same this time. There is no much difference between the mean and median values with and without NAs. This could be because, for the given data set, there were several days with steps not available. Hence, filling them with the mean for 5-minute interval resulted the mean and median to be the same and very close to that of with dataset ingoring the NAs. The conclusion is that there is no significant change in the distribution of the number of steps across intervals.
+The histogram this time shows that there are more days with non-zero total steps. However, the mean and median values are the same this time. There is not much difference between the mean and median values with and without NAs. This could be because, for the given data set, there were several days with steps not available. Hence, filling them with the mean for 5-minute interval resulted the mean and median to be the same and very close to that of with dataset ingoring the NAs. The conclusion is that there is no significant change in the distribution of the number of steps across intervals.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -218,7 +218,14 @@ suppressWarnings(suppressMessages(library(dplyr)))
 
 ## alter the data set with missing values filled to have another column to have the weekday or weekend factor data.
 fiveMinuteDataMissingFilled <- mutate(fiveMinuteDataMissingFilled, wkday = ifelse(weekdays(as.Date(date)) == "Saturday" | weekdays(as.Date(date)) == "Sunday", "Weekend","Weekday"))
+```
 
+```
+## Warning in strptime(xx, f <- "%Y-%m-%d", tz = "GMT"): unable to identify current timezone 'C':
+## please set environment variable 'TZ'
+```
+
+```r
 head(fiveMinuteDataMissingFilled)
 ```
 
