@@ -124,13 +124,13 @@ plot(steps ~ interval, data=intervalAvgDataSet, type="l", xlab="Intervals", ylab
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
-maxInerval <- intervalAvgDataSet[which.max(intervalAvgDataSet$steps),1]
+maxInterval <- intervalAvgDataSet[which.max(intervalAvgDataSet$steps),1]
 ```
 
 From the chart it is clear that the 5-minute interval with maximum average number of steps is:
 
 ```r
-maxInerval
+maxInterval
 ```
 
 ```
